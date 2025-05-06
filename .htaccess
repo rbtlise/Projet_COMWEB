@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?nom=$1
+RewriteRule ^(.*)$ API.php?nom=$1
