@@ -6,7 +6,7 @@ function Bouton(Props){
   return (
     <p>
       <button onClick={Props.cliquer}>
-            Changer
+            Afficher les notes
       </button>
     </p>
   )
@@ -15,7 +15,7 @@ function Bouton(Props){
 function Texte(Props){
   return (
     <p>
-      {Props.titre}
+      {Props.matiere} : {Props.note}
     </p>
   )
 }
@@ -52,10 +52,11 @@ function App() {
     <>
       <Saisie nom={nom} setNom={setNom}/> 
       <Bouton cliquer={cliquer}/>
-      <Texte titre={data[0].note}/> {/* faire un foreach pour afficher plusieurs notes */}
+      {data.length > 0 && data.map((item, index) => (
+      <Texte key={index} matiere={item.matière} note={item.note}/>
+       ))}
     </>
   )
 }
-
 
 export default App
