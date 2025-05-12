@@ -39,7 +39,7 @@ function App() {
   const [data, setData] = useState([jsondata])
     
   const cliquer=function(){
-      let url = `http://localhost/Projet_essai/${nom}`;
+      let url = `https://lamaire.zzz.bordeaux-inp.fr/API.php?nom=${nom}`;
       fetch(url)
           .then(r => r.json())
           .then(datas => {setData(datas)})
@@ -53,10 +53,11 @@ function App() {
       <Saisie nom={nom} setNom={setNom}/> 
       <Bouton cliquer={cliquer}/>
       {data.length > 0 && data.map((item, index) => (
-      <Texte key={index} matiere={item.matière} note={item.note}/>
+      <Texte key={index} matiere={item.matiere} note={item.note}/>
        ))}
     </>
   )
+  
 }
 
 export default App

@@ -22,7 +22,7 @@ function recupNotes($texte) {
         die('Erreur : '. $e->getMessage());
     }
     
-    $requete = "SELECT note FROM `notes` JOIN `etudiants` ON notes.id_Etu = etudiants.id_Etu WHERE etudiants.nom_Etu LIKE \"$texte%\" ;";
+    $requete = "SELECT note, matiere FROM `notes` JOIN `etudiants` ON notes.id_Etu = etudiants.id_Etu WHERE etudiants.nom_Etu LIKE \"$texte%\" ;";
     
     $resultat = $bdd->query($requete);
     
