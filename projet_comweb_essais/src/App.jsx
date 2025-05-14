@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
-//import './App.css'
 
 function Bouton(Props){
   return (
@@ -45,8 +44,6 @@ function App() {
           .then(datas => {setData(datas)})
           //.catch(e => console.error("Erreur fetch:", e)); 
      }
-
-  //useEffect(cliquer,[])
 
   return (
     <>

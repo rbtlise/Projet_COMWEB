@@ -3,16 +3,15 @@
 function envoiJSON($tab){
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *');
-    //print_r($tab);
     $json = json_encode($tab, JSON_UNESCAPED_UNICODE);
     echo $json;
 }
 
 function recupNotes($texte) {
     $host = 'localhost';		
-    $dbname = 'bdd_notes';
-    $username = 'root';
-    $password = '';
+    $dbname = 'lamaire';
+    $username = 'lamaire';
+    $password = 'test_BD';
     
     try {
         $bdd = new PDO('mysql:host='. $host .';dbname='. $dbname .';charset=utf8',
